@@ -9,10 +9,10 @@ const passport = require('passport');
 const app = express();
 
 // Passport config
-require('./config/passport')(passport);
+require('./config/passport.js')(passport);
 
 // DB config
-const db = require('./config/keys').MongoURI;
+const db = require('./config/keys.js').MongoURI;
 
 // Connect to Mongo
 mongoose.connect(db, {
@@ -58,8 +58,8 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/', require('./routes/index'));
-app.use('/', require('./routes/login'));
+app.use('/', require('./routes/index.js'));
+app.use('/', require('./routes/auth.js'));
 
 const PORT = process.env.PORT || 3000;
 

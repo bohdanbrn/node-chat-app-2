@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-// TODO (maybe bug User => user)
 // User model
 const User = require('../models/User');
 
@@ -90,7 +89,7 @@ router.post('/register', (req, res) => {
                                     res.redirect('/login');
                                 })
                                 .catch(err => console.log(err));
-                    }));
+                        }));
                 }
             });
     }
